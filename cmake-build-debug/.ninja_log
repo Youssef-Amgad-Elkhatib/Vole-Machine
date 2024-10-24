@@ -5,3 +5,9 @@
 5	2031	7514119383464571	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	48c0a12250aadd99
 9	1957	7514119382717032	CMakeFiles/Vole_machine.dir/ALU.cpp.obj	3967a4e183c411e0
 2053	2183	7514119384959571	Vole_machine.exe	252aa4ae8fd130b9
+7	2423	7514991342648115	CMakeFiles/Vole_machine.dir/main.cpp.obj	b490d4c2c81ee06f
+15	2438	7514991342798162	CMakeFiles/Vole_machine.dir/Instructions.cpp.obj	22012a609fa564ba
+19	2451	7514991342948127	CMakeFiles/Vole_machine.dir/ALU.cpp.obj	addeed1b42c275b8
+11	2475	7514991343178102	CMakeFiles/Vole_machine.dir/Registers.cpp.obj	b3aabbba84f45e70
+1	2483	7514991343258114	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	cf424b56be33bbd9
+2483	2918	7514991347558107	Vole_machine.exe	327c16dd23d8fc01
