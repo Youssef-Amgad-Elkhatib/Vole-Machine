@@ -1,0 +1,3 @@
+C:/study/2nd year/1st sesmester/oop/Vole_machine/cmake-build-debug/CMakeFiles/Vole_machine.dir
+C:/study/2nd year/1st sesmester/oop/Vole_machine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/study/2nd year/1st sesmester/oop/Vole_machine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

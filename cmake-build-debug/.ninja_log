@@ -1,0 +1,7 @@
+# ninja log v5
+7	1972	7514119382866531	CMakeFiles/Vole_machine.dir/Instructions.cpp.obj	6141ba190b7227fd
+12	2053	7514119383683800	CMakeFiles/Vole_machine.dir/Registers.cpp.obj	903026b50d78cf00
+2	2012	7514119383285174	CMakeFiles/Vole_machine.dir/main.cpp.obj	c635f71aecb5a598
+5	2031	7514119383464571	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	48c0a12250aadd99
+9	1957	7514119382717032	CMakeFiles/Vole_machine.dir/ALU.cpp.obj	3967a4e183c411e0
+2053	2183	7514119384959571	Vole_machine.exe	252aa4ae8fd130b9
