@@ -1,18 +1,14 @@
-//
-// Created by Youssef Elkhatib on 10/23/2024.
-//
-
 #ifndef VOLE_MACHINE_INSTRUCTIONS_H
 #define VOLE_MACHINE_INSTRUCTIONS_H
-#include <iostream>
-#include <bits/stdc++.h>
-#include "Memory.h"
-using namespace std;
 
+#include <bits/stdc++.h>
+#include "ram.h"
+using namespace std;
 class Instructions {
 public:
-void load_file(fstream &file,Memory &m1);
+    bool load_file(fstream& file, RAM& m1, int program_counter);
+
+    bool isHexChar(char c) const;
 };
 
-
-#endif //VOLE_MACHINE_INSTRUCTIONS_H
+#endif // VOLE_MACHINE_INSTRUCTIONS_H

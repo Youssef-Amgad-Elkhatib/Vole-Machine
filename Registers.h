@@ -1,17 +1,16 @@
-#ifndef VOLE_MACHINE_REGISTERS_H
-#define VOLE_MACHINE_REGISTERS_H
-#include <bits/stdc++.h>
-using namespace std;
+#ifndef REGISTERS_H
+#define REGISTERS_H
 
-class Registers {
-    vector<string> registers;
-    friend class ALU;
-    string decimalToHexadecimal(int decimal);
-    string decimalToBinary(int decimal);
+#include "memory.h"
+
+class Registers : public Memory {
 public:
-    Registers():registers(16,"00"){}
-    void print();
+    Registers() {
+        memory.resize(16, "00");
+    }
+
+    void print() override;
+    int get_size() const override { return 16; }
 };
 
-
-#endif //VOLE_MACHINE_REGISTERS_H
+#endif

@@ -11,4 +11,6 @@ add_executable(Vole_machine main.cpp
         Registers.h
         Registers.cpp
         ALU.h
-        ALU.cpp)
+        ALU.cpp
+        ram.h
+        ram.cpp)

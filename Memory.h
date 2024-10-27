@@ -1,21 +1,27 @@
-#ifndef VOLE_MACHINE_MEMORY_H
-#define VOLE_MACHINE_MEMORY_H
-#include <iostream>
+#ifndef MEMORY_H
+#define MEMORY_H
+
 #include <bits/stdc++.h>
-#include <vector>
+
 using namespace std;
 class Memory {
+protected:
     vector<string> memory;
+
+    // Common utility functions for all memory types
+    string decimalToBinary(int decimal);
+    string decimalToHexadecimal(int decimal);
+
+public:
+    virtual void print() = 0;
+    virtual int get_size() const = 0;
+    virtual void set_cell(int index, string value);
+    virtual string get_cell(int index);
+
     friend class Instructions;
     friend class ALU;
-    string decimalToBinary2(int decimal);
-    string decimalToHexadecimal2(int decimal);
-public:
-    Memory() : memory(256, "00") {}
-    void print();
+    friend class MainUI;
 
 };
 
-
-
-#endif //VOLE_MACHINE_MEMORY_H
+#endif
