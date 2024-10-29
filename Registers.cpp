@@ -2,15 +2,21 @@
 using namespace std;
 
 void Registers::print() {
-    cout << "\n----\n";
-    cout << "Register   Hexa    Binary\n";
-    cout << "----\n";
+    cout << "---------------------------------------------------------------------------------------------\n";
+    cout << "| Register |";
 
+    // Print column headers for each register number, in a boxed format
     for (int i = 0; i < memory.size(); i++) {
-        cout << "R" << decimalToHexadecimal(i)
-             << setw(11) << setfill(' ') << memory[i]
-             << setw(17) << setfill(' ')
-             << decimalToBinary(stoi(memory[i], nullptr, 16)) << endl;
+        cout << " R" << decimalToHexadecimal(i) << setw(3) << setfill(' ');
     }
-    cout << "----\n";
+    cout << " |\n";
+    cout << "---------------------------------------------------------------------------------------------\n";
+
+    // Print hexadecimal values of registers
+    cout << "| Hexa     |";
+    for (int i = 0; i < memory.size(); i++) {
+        cout << " " << memory[i] << "  ";
+    }
+    cout << "|\n";
+    cout << "---------------------------------------------------------------------------------------------\n\n";
 }

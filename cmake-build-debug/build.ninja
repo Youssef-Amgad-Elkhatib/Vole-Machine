@@ -49,39 +49,45 @@ cmake_ninja_workdir = C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/cmake-
 
 build cmake_object_order_depends_target_Vole_machine: phony || CMakeFiles/Vole_machine.dir
 
-build CMakeFiles/Vole_machine.dir/main.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/main.cpp || cmake_object_order_depends_target_Vole_machine
-  DEP_FILE = CMakeFiles\Vole_machine.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Vole_machine.dir
-  OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
-
-build CMakeFiles/Vole_machine.dir/Memory.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/Memory.cpp || cmake_object_order_depends_target_Vole_machine
-  DEP_FILE = CMakeFiles\Vole_machine.dir\Memory.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+build CMakeFiles/Vole_machine.dir/CPU.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/CPU.cpp || cmake_object_order_depends_target_Vole_machine
+  DEP_FILE = CMakeFiles\Vole_machine.dir\CPU.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
   OBJECT_DIR = CMakeFiles\Vole_machine.dir
   OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
 
 build CMakeFiles/Vole_machine.dir/Instructions.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/Instructions.cpp || cmake_object_order_depends_target_Vole_machine
   DEP_FILE = CMakeFiles\Vole_machine.dir\Instructions.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
   OBJECT_DIR = CMakeFiles\Vole_machine.dir
   OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
 
-build CMakeFiles/Vole_machine.dir/Registers.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/Registers.cpp || cmake_object_order_depends_target_Vole_machine
-  DEP_FILE = CMakeFiles\Vole_machine.dir\Registers.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+build CMakeFiles/Vole_machine.dir/main.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/main.cpp || cmake_object_order_depends_target_Vole_machine
+  DEP_FILE = CMakeFiles\Vole_machine.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
   OBJECT_DIR = CMakeFiles\Vole_machine.dir
   OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
 
-build CMakeFiles/Vole_machine.dir/ALU.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/ALU.cpp || cmake_object_order_depends_target_Vole_machine
-  DEP_FILE = CMakeFiles\Vole_machine.dir\ALU.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+build CMakeFiles/Vole_machine.dir/Memory.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/Memory.cpp || cmake_object_order_depends_target_Vole_machine
+  DEP_FILE = CMakeFiles\Vole_machine.dir\Memory.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
   OBJECT_DIR = CMakeFiles\Vole_machine.dir
   OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
 
 build CMakeFiles/Vole_machine.dir/ram.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/ram.cpp || cmake_object_order_depends_target_Vole_machine
   DEP_FILE = CMakeFiles\Vole_machine.dir\ram.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
+  OBJECT_DIR = CMakeFiles\Vole_machine.dir
+  OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
+
+build CMakeFiles/Vole_machine.dir/Registers.cpp.obj: CXX_COMPILER__Vole_machine_unscanned_Debug C$:/study/2nd$ year/1st$ sesmester/oop/Vole_machine/Registers.cpp || cmake_object_order_depends_target_Vole_machine
+  DEP_FILE = CMakeFiles\Vole_machine.dir\Registers.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I"C:/study/2nd year/1st sesmester/oop/Vole_machine/."
   OBJECT_DIR = CMakeFiles\Vole_machine.dir
   OBJECT_FILE_DIR = CMakeFiles\Vole_machine.dir
 
@@ -93,7 +99,7 @@ build CMakeFiles/Vole_machine.dir/ram.cpp.obj: CXX_COMPILER__Vole_machine_unscan
 #############################################
 # Link the executable Vole_machine.exe
 
-build Vole_machine.exe: CXX_EXECUTABLE_LINKER__Vole_machine_Debug CMakeFiles/Vole_machine.dir/main.cpp.obj CMakeFiles/Vole_machine.dir/Memory.cpp.obj CMakeFiles/Vole_machine.dir/Instructions.cpp.obj CMakeFiles/Vole_machine.dir/Registers.cpp.obj CMakeFiles/Vole_machine.dir/ALU.cpp.obj CMakeFiles/Vole_machine.dir/ram.cpp.obj
+build Vole_machine.exe: CXX_EXECUTABLE_LINKER__Vole_machine_Debug CMakeFiles/Vole_machine.dir/CPU.cpp.obj CMakeFiles/Vole_machine.dir/Instructions.cpp.obj CMakeFiles/Vole_machine.dir/main.cpp.obj CMakeFiles/Vole_machine.dir/Memory.cpp.obj CMakeFiles/Vole_machine.dir/ram.cpp.obj CMakeFiles/Vole_machine.dir/Registers.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Vole_machine.dir

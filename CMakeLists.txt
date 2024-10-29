@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.27)
 project(Vole_machine)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Vole_machine main.cpp
-        Memory.h
-        Memory.cpp
-        Instructions.h
+include_directories(.)
+
+add_executable(Vole_machine
+        CPU.cpp
+        CPU.h
         Instructions.cpp
-        Registers.h
-        Registers.cpp
-        ALU.h
-        ALU.cpp
+        Instructions.h
+        main.cpp
+        Memory.cpp
+        Memory.h
+        ram.cpp
         ram.h
-        ram.cpp)
+        Registers.cpp
+        Registers.h)

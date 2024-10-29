@@ -19,7 +19,7 @@ public:
     virtual string get_cell(int index);
 
     friend class Instructions;
-    friend class ALU;
+    friend class CPU;
     friend class MainUI;
 
 };

@@ -1,7 +1,7 @@
 #include "Instructions.h"
 #include "ram.h"
 #include "Registers.h"
-#include "ALU.h"
+#include "CPU.h"
 #include <bits/stdc++.h>
 
 class MainUI {
@@ -9,7 +9,7 @@ private:
     Instructions instructions;
     RAM ram;
     Registers registers;
-    ALU alu;
+    CPU cpu;
     bool is_running;
 
     // Helper functions
@@ -47,10 +47,9 @@ private:
     string getFilePath(const string& prompt) {
         string filePath;
         bool valid = false;
-
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         while (!valid) {
             cout << prompt << endl;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             getline(cin, filePath);
             ifstream file(filePath);
 
@@ -70,7 +69,7 @@ private:
             ram.set_cell(i, "00");
         }
 
-        alu = ALU();
+        cpu = CPU();
 
         for (int i = 0; i < registers.get_size(); i++) {
             registers.set_cell(i, "00");
@@ -79,35 +78,38 @@ private:
     }
 
     void run_new_program() {
+        reset_memory();
+        bool step=false;
         string file_path = getFilePath("Enter the file path of your program :");
         fstream f(file_path,ios::in);
         int counter = 0;
         cout << "Where do you want to load the program in the memory ?" << endl;
-        cout << "(enter a number from 0 to 255)" << endl;
+        cout << "(enter a number from 1 to 255)" << endl;
         counter = take_valid_input("Error: Invalid input", 0, 255);
-        instructions.load_file(f, ram, counter);
+        bool it_is_loadable = instructions.load_file(f, ram, counter,step,registers);
+        if(!it_is_loadable){
+            return;
+        }
         f.close();
-        alu.operate(ram, registers, counter);
-    }
-
-    void run_step_by_step() {
-        // Implementation will execute program one instruction at a time
-    }
-
-    void show_memory_status() {
-        cout << "Memory status: "<< endl;
+        cpu.operate(ram, registers, counter, step);
         ram.print();
         registers.print();
     }
 
-    void show_pc_value() {
-        cout << "the program counter value is :" << endl;
-        cout << alu.get_pc() << endl;
+    void run_step_by_step() {
+        bool step=true;
+        string file_path = getFilePath("Enter the file path of your program :");
+        fstream f(file_path,ios::in);
+        int counter = 0;
+        cout << "Where do you want to load the program in the memory ?" << endl;
+        cout << "(enter a number from 1 to 255)" << endl;
+        counter = take_valid_input("Error: Invalid input", 1, 255);
+        instructions.load_file(f, ram, counter,step,registers);
+        f.close();
+
     }
 
-    void show_ir_value() {
-        // Implementation will display current instruction register value
-    }
+
 
 public:
     MainUI() : is_running(true) {
@@ -118,14 +120,11 @@ public:
         while (is_running) {
             cout << "\nVOLE Machine Main Menu\n"
                  << "Please select an option:\n"
-                 << "1) Run New Program\n"
+                 << "1) Run Program as a Whole\n"
                  << "2) Run Program Step by Step\n"
-                 << "3) Show Memory Status\n"
-                 << "4) Show Program Counter (PC)\n"
-                 << "5) Show Instruction Register (IR)\n"
-                 << "6) Exit\n";
+                 << "3) Exit\n";
 
-            int choice = take_valid_input("Invalid choice. Please try again.", 1, 6);
+            int choice = take_valid_input("Invalid choice. Please try again.", 1, 3);
 
             switch(choice) {
                 case 1:
@@ -135,15 +134,6 @@ public:
                     run_step_by_step();
                     break;
                 case 3:
-                    show_memory_status();
-                    break;
-                case 4:
-                    show_pc_value();
-                    break;
-                case 5:
-                    show_ir_value();
-                    break;
-                case 6:
                     cout << "Exiting VOLE Machine. Thank you!\n";
                     is_running = false;
                     break;
