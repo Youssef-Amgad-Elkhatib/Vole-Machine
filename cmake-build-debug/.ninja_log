@@ -1,16 +1,9 @@
 # ninja log v5
-6	1215	7518848906912658	CMakeFiles/Vole_machine.dir/main.cpp.obj	35aadc089bfe7da4
-21	1239	7518321026330317	CMakeFiles/Vole_machine.dir/Registers.cpp.obj	9bbab08b104c7f2
-1066	1199	7518856495787303	Vole_machine.exe	b1e1a9d5191f031e
-3	1066	7518856494508087	CMakeFiles/Vole_machine.dir/ALU.cpp.obj	1f017a17a7507217
-7	1304	7518321026967337	CMakeFiles/Vole_machine.dir/Instructions.cpp.obj	23ed80b869cba83f
-18	1244	7518321026360316	CMakeFiles/Vole_machine.dir/ram.cpp.obj	d7b2d656e3fce3ed
-10	1343	7518321027367337	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	2a05f457d9909e52
-7	635	7518884225365713	build.ninja	7182d00b20b811ad
-15	1069	7518884237545250	CMakeFiles/Vole_machine.dir/Registers.cpp.obj	9bbab08b104c7f2
-18	1070	7518884237575276	CMakeFiles/Vole_machine.dir/ram.cpp.obj	d7b2d656e3fce3ed
-12	1126	7518884238120419	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	2a05f457d9909e52
-3	1152	7518884238380408	CMakeFiles/Vole_machine.dir/Instructions.cpp.obj	23ed80b869cba83f
-10	1162	7518884238480400	CMakeFiles/Vole_machine.dir/main.cpp.obj	35aadc089bfe7da4
-3	1239	7518884641747222	CMakeFiles/Vole_machine.dir/CPU.cpp.obj	489f7e560db6a378
-1239	1643	7518884645718791	Vole_machine.exe	5f0268405cb42528
+8	1228	7519353852165552	CMakeFiles/Vole_machine.dir/main.cpp.obj	35aadc089bfe7da4
+20	1070	7519353850589835	CMakeFiles/Vole_machine.dir/Registers.cpp.obj	9bbab08b104c7f2
+12	1235	7519353852235588	CMakeFiles/Vole_machine.dir/Instructions.cpp.obj	23ed80b869cba83f
+24	1129	7519353851179895	CMakeFiles/Vole_machine.dir/ram.cpp.obj	d7b2d656e3fce3ed
+1	1199	7519353851875307	CMakeFiles/Vole_machine.dir/CPU.cpp.obj	489f7e560db6a378
+16	1202	7519353851895304	CMakeFiles/Vole_machine.dir/Memory.cpp.obj	2a05f457d9909e52
+2	183	7519353987011856	build.ninja	7182d00b20b811ad
+3	130	7519353989342805	Vole_machine.exe	5f0268405cb42528

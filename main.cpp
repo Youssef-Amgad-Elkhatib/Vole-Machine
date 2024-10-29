@@ -3,7 +3,8 @@
 #include "Registers.h"
 #include "CPU.h"
 #include <bits/stdc++.h>
-
+int counter=0;
+bool step=false;
 class MainUI {
 private:
     Instructions instructions;
@@ -77,36 +78,26 @@ private:
 
     }
 
-    void run_new_program() {
+    void load_program(){
         reset_memory();
-        bool step=false;
         string file_path = getFilePath("Enter the file path of your program :");
         fstream f(file_path,ios::in);
-        int counter = 0;
         cout << "Where do you want to load the program in the memory ?" << endl;
-        cout << "(enter a number from 1 to 255)" << endl;
+        cout << "(enter a number from 0 to 255)" << endl;
         counter = take_valid_input("Error: Invalid input", 0, 255);
-        bool it_is_loadable = instructions.load_file(f, ram, counter,step,registers);
-        if(!it_is_loadable){
-            return;
-        }
+        instructions.load_file(f,ram,counter);
         f.close();
+    }
+    void run_new_program() {
+        step=false;
         cpu.operate(ram, registers, counter, step);
         ram.print();
         registers.print();
     }
 
     void run_step_by_step() {
-        bool step=true;
-        string file_path = getFilePath("Enter the file path of your program :");
-        fstream f(file_path,ios::in);
-        int counter = 0;
-        cout << "Where do you want to load the program in the memory ?" << endl;
-        cout << "(enter a number from 1 to 255)" << endl;
-        counter = take_valid_input("Error: Invalid input", 1, 255);
-        instructions.load_file(f, ram, counter,step,registers);
-        f.close();
-
+        step=true;
+        cpu.operate(ram, registers, counter, step);
     }
 
 
@@ -120,20 +111,24 @@ public:
         while (is_running) {
             cout << "\nVOLE Machine Main Menu\n"
                  << "Please select an option:\n"
-                 << "1) Run Program as a Whole\n"
-                 << "2) Run Program Step by Step\n"
-                 << "3) Exit\n";
+                 << "1) Load a new program\n"
+                 << "2) Run Program as a Whole\n"
+                 << "3) Run Program Step by Step\n"
+                 << "4) Exit\n";
 
-            int choice = take_valid_input("Invalid choice. Please try again.", 1, 3);
+            int choice = take_valid_input("Invalid choice. Please try again.", 1, 4);
 
             switch(choice) {
                 case 1:
-                    run_new_program();
+                    load_program();
                     break;
                 case 2:
-                    run_step_by_step();
+                    run_new_program();
                     break;
                 case 3:
+                    run_step_by_step();
+                    break;
+                case 4:
                     cout << "Exiting VOLE Machine. Thank you!\n";
                     is_running = false;
                     break;

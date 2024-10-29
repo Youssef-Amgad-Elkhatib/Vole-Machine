@@ -2,7 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
+int CPU::hexCharToInt(char hexChar) {
+    string hexString(1, hexChar);
+    return stoi(hexString, nullptr, 16);
+}
+void CPU::operate(RAM &m1, Registers &r1, int counter,bool step) {
     cout << "The output of this program is:" << endl;
     program_counter = counter;
     while(program_counter < m1.memory.size()) {
@@ -30,19 +34,19 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
             case '3': {  // STORE
                 string mem_cell_location = string(1, IR[2]) + string(1, IR[3]);
                 int mem_index = stoi(mem_cell_location, nullptr, 16);
-                int reg_index = IR[1] - '0';
+                int reg_index = hexCharToInt(IR[1]);
 
                 if (mem_index < m1.memory.size() && reg_index < 16) {
                     m1.memory[mem_index] = r1.memory[reg_index];
                     if(mem_index == 0){
-                        cout << m1.memory[mem_index] << endl;
+                        cout <<"Output: "<< m1.memory[mem_index] << endl;
                     }
                 }
                 break;
             }
             case '4': {  // MOVE
-                int reg_source = IR[1] - '0';
-                int reg_dest = IR[2] - '0';
+                int reg_source = hexCharToInt(IR[1]);
+                int reg_dest = hexCharToInt(IR[2]);
 
                 if (reg_source < 16 && reg_dest < 16) {
                     r1.memory[reg_dest] = r1.memory[reg_source];
@@ -50,9 +54,9 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case '5': {  // ADD two's complement
-                int r_index = IR[1] - '0';
-                int s_index = IR[2] - '0';
-                int t_index = IR[3] - '0';
+                int r_index = hexCharToInt(IR[1]);
+                int s_index = hexCharToInt(IR[2]);
+                int t_index = hexCharToInt(IR[3]);
 
                 if (r_index < 16 && s_index < 16 && t_index < 16) {
                     int s_value = stoi(r1.memory[s_index], nullptr, 16);
@@ -66,12 +70,12 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case '6': {  // ADD floating-point
-                int r_index = IR[1] - '0';
-                int s_index = IR[2] - '0';
-                int t_index = IR[3] - '0';
+                int r_index = hexCharToInt(IR[1]);
+                int s_index = hexCharToInt(IR[2]);
+                int t_index = hexCharToInt(IR[3]);
 
                 auto hex_to_float = [](string hex_string){
-                    unsigned long value = stoul(hex_string, nullptr, 16);
+                    unsigned long value = stol(hex_string, nullptr, 16);
                     bitset<8> bits(value);
                     // Extract sign bit
                     unsigned int sign_bit = bits[7];
@@ -141,9 +145,9 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case '7':{ // ORing
-                int r_index = IR[1] - '0';
-                int s_index = IR[2] - '0';
-                int t_index = IR[3] - '0';
+                int r_index = hexCharToInt(IR[1]);
+                int s_index = hexCharToInt(IR[2]);
+                int t_index = hexCharToInt(IR[3]);
 
                 int s_value = stoi(r1.memory[s_index], nullptr, 16);
                 int t_value = stoi(r1.memory[t_index], nullptr, 16);
@@ -155,9 +159,9 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case '8': { // ANDing
-                int r_index = IR[1] - '0';
-                int s_index = IR[2] - '0';
-                int t_index = IR[3] - '0';
+                int r_index = hexCharToInt(IR[1]);
+                int s_index = hexCharToInt(IR[2]);
+                int t_index = hexCharToInt(IR[3]);
 
                 int s_value = stoi(r1.memory[s_index], nullptr, 16);
                 int t_value = stoi(r1.memory[t_index], nullptr, 16);
@@ -169,9 +173,9 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case '9': { // XORing
-                int r_index = IR[1] - '0';
-                int s_index = IR[2] - '0';
-                int t_index = IR[3] - '0';
+                int r_index = hexCharToInt(IR[1]);
+                int s_index = hexCharToInt(IR[2]);
+                int t_index = hexCharToInt(IR[3]);
 
                 int s_value = stoi(r1.memory[s_index], nullptr, 16);
                 int t_value = stoi(r1.memory[t_index], nullptr, 16);
@@ -203,7 +207,7 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                     reverse(result.begin(), result.end());
                     return result;
                 };
-                int r_index = IR[1] - '0';
+                int r_index = hexCharToInt(IR[1]);
                 string binary_value = convert(r1.memory[r_index],16,2);
                 int k = stoi(r1.memory[IR[3]], nullptr, 16);
                 string result = binary_value.substr(k) + binary_value.substr(0, k);
@@ -211,7 +215,7 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
                 break;
             }
             case 'B': { // JUMP
-                int reg_index = IR[1] - '0';
+                int reg_index = hexCharToInt(IR[1]);
                 string jump_address = string(1, IR[2]) + string(1, IR[3]);
 
                 if (reg_index >= 0 && reg_index < 16) {
@@ -231,6 +235,11 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
             default:
                 continue;
         }
+        if(step){
+            cout<<"Current Instruction: "<<IR<<"   "<<"Current Counter: "<<counter<<endl;
+            m1.print();
+            r1.print();
+        }
         program_counter += 2;
     }
 }
@@ -238,3 +247,5 @@ void CPU::operate(RAM &m1, Registers &r1, int counter, bool step) {
 int CPU::get_pc(){
     return program_counter;
 }
+
+
