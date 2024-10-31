@@ -3,10 +3,16 @@
 
 using namespace std;
 bool Instructions::isHexChar(char c) const {
-    static const std::vector<char> hexChars = {
+    static const vector<char> hexChars = {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-            'A', 'B', 'C', 'D', 'E', 'F',
-            'a', 'b', 'c', 'd', 'e', 'f'
+            'A', 'B', 'C', 'D', 'E', 'F'
+    };
+    return find(hexChars.begin(), hexChars.end(), toupper(c)) != hexChars.end();
+}
+bool Instructions::check_op(char c) const {
+    static const vector<char> hexChars = {
+            '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'A', 'B', 'C', 'D'
     };
     return find(hexChars.begin(), hexChars.end(), toupper(c)) != hexChars.end();
 }
@@ -16,7 +22,7 @@ bool Instructions::load_file(fstream& file, RAM& m1, int program_counter) {
     while (file >> x) {
         // Validate 4-character length and hex content
         if (x.length() != 4 ||
-            !(isHexChar(x[0]) && isHexChar(x[1]) && isHexChar(x[2]) && isHexChar(x[3]))) {
+            !(check_op(x[0]) && isHexChar(x[1]) && isHexChar(x[2]) && isHexChar(x[3]))) {
             continue;
         }
         if(program_counter + 1 >= m1.memory.size()){
@@ -33,4 +39,6 @@ bool Instructions::load_file(fstream& file, RAM& m1, int program_counter) {
         }
     return true;
     }
+
+
 

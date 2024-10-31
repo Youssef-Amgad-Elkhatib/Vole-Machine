@@ -229,6 +229,25 @@ void CPU::operate(RAM &m1, Registers &r1, int counter,bool step) {
                 }
                 break;
             }
+            case 'D': { // JUMP if R > 0 (two's complement)
+                int reg_index = hexCharToInt(IR[1]);
+                string jump_address = string(1, IR[2]) + string(1, IR[3]);
+
+                if (reg_index >= 0 && reg_index < 16) {
+                    // Compare as two's complement integers
+                    int reg_val = stoi(r1.memory[reg_index], nullptr, 16);
+                    int zero_val = stoi(r1.memory[0], nullptr, 16);
+
+                    if (reg_val > zero_val) {
+                        int new_pc = stoi(jump_address, nullptr, 16);
+                        if (new_pc >= 0 && new_pc < m1.memory.size()) {
+                            program_counter = new_pc;
+                            continue;
+                        }
+                    }
+                }
+                break;
+            }
             case 'C': {  // HALT
                 return;
             }
