@@ -229,7 +229,7 @@ void CPU::operate(RAM &m1, Registers &r1, int counter,bool step) {
                 }
                 break;
             }
-            case 'D': { // JUMP if R > 0 (two's complement)
+            case 'D': { // JUMP2
                 int reg_index = hexCharToInt(IR[1]);
                 string jump_address = string(1, IR[2]) + string(1, IR[3]);
 
