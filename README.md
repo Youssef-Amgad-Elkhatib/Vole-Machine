@@ -1,9 +1,9 @@
-# Vole Machine Simulator
+# 💻 Vole Machine Simulator
 
-## Overview
+## 	📖 Overview
 The **Vole Machine Simulator** is a virtual representation of a Vole Machine using C++, a simple computing system that executes instructions using a simulated CPU, RAM, and registers. This project provides an environment for executing Vole Machine instructions, manipulating memory, and simulating computational processes.
 
-## Features
+## ✨ Features
 - **Instruction Execution**: Implements Vole Machine instruction set.
 - **Memory Management**: 16x16 RAM matrix for storing data.
 - **Registers**: 16 registers for temporary storage and calculations.
@@ -11,7 +11,7 @@ The **Vole Machine Simulator** is a virtual representation of a Vole Machine usi
 
 
 
-## Supported Instructions
+## 📜 Supported Instructions
 | Instruction | Description |
 |------------|-------------|
 | `LOAD Rx, Addr` | Load value from memory address into register |
@@ -41,7 +41,7 @@ The **Vole Machine Simulator** is a virtual representation of a Vole Machine usi
 | `RET` | Return from subroutine |
 | `HLT` | Halt execution |
 
-## Contributors
+## 🤝 Contributors
 
 - [Youssef Amgad Elkhatib](https://github.com/Youssef-Amgad-Elkhatib)
 - [Youssef Sami George](https://github.com/YoussefSamiGeorges)
