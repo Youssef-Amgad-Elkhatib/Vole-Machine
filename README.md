@@ -43,6 +43,6 @@ The **Vole Machine Simulator** is a virtual representation of a Vole Machine usi
 
 ## Contributors
 
--[Youssef Amgad Elkhatib](https://github.com/Youssef-Amgad-Elkhatib)
--[Youssef Sami George]()
+- [Youssef Amgad Elkhatib](https://github.com/Youssef-Amgad-Elkhatib)
+- [Youssef Sami George](https://github.com/YoussefSamiGeorges)
 
