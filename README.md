@@ -41,7 +41,7 @@ The **Vole Machine Simulator** is a virtual representation of a Vole Machine usi
 | `RET` | Return from subroutine |
 | `HLT` | Halt execution |
 
-## 🤝 Contributors
+## ✍️ Authors
 
 - [Youssef Amgad Elkhatib](https://github.com/Youssef-Amgad-Elkhatib)
 - [Youssef Sami George](https://github.com/YoussefSamiGeorges)
